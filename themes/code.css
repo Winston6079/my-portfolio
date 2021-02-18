@@ -1,0 +1,28 @@
+.code {
+  width: 800px;
+  height: auto;
+  background-color: #455a64;
+  margin-left: 10%;
+  border-radius: 25px;
+  padding: 10px 20px;
+}
+
+.code p {
+  color: #fff;
+}
+
+.code .indent {
+  text-indent: 20px;
+}
+
+p > i {
+  color: orange;
+}
+
+#if {
+  text-indent: 40px;
+}
+
+#return {
+  text-indent: 60px;
+}

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Python PassCheck</title>
+
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1" />
+
+	<link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+
+	<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" type="text/css" href="../themes/code.css" />
+
+	<link rel="stylesheet" type="text/css" href="../default.css">
+
+	<link rel="icon" type="image/png" href="../images/favicon.png"/>
+
+
+	<style type="text/css">
+		.img-container{
+			max-width: 600px;
+		}
+
+		img{
+			width: 100%
+		}
+
+	</style>
+
+</head>
+<body>
+	<div class="nav-wrapper">
+
+		<a href="../index.html">
+			<div class="dots-wrapper">
+				<div id="dot-1" class="browser-dot"></div>
+				<div id="dot-2" class="browser-dot"></div>
+				<div id="dot-3" class="browser-dot"></div>
+			</div>
+		</a>
+
+		<ul id="navigation">
+			<li><a href="../index.html#contact">Contact</a></li>
+
+		</ul>
+	</div>
+
+	<div class="main-container">
+		<br>
+
+		<div class="img-container">
+			<img src="../images/passwordcheckunsafe.png">
+		</div>
+
+		<h3>Python Password Safe-Check</h3>
+
+		<p>This was a project I started when I first learned python.
+		<br>
+		<br>
+		The idea is that you can check whether your password was ever leaked and if so how many times.
+		<br>
+		<br>
+		The first concern is whether or not to trust your password to some api over the internet. But that's an issue that's solved.
+		<br>
+		<br>
+		Instead of sending your entire password, only a fraction of the HASHED password is sent over the wire.
+		<br>
+		<br>
+		The api used is from pwnedpasswords.</p>
+
+		<h5>Technologies:</h5>
+		<ul>
+			<li>- Python</li>
+			<li>- hashlib</li>
+			<li>- requests</li>
+			<li>- sys</li>
+			<li>- pwnedpasswords.com</li>
+		</ul>
+
+
+	  <h5><a href="https://github.com/Winston6079/password-check">> Go to project</a></h5>
+		<h5>Hashing of the password</h5>
+
+		<div class="code">
+			<h6>
+				<p><i>def</i> <i style="color: #ffcb91;">pwned_api_check</i>(password):</p>
+				<div class="indent">
+					<p>sha1password = hashlib.sha1(password.encode('utf-8')).hexdigest().upper()</p>
+					<p>first5_char, tail = sha1password[:5], sha1password[5:]</p>
+					<p>response = request_api_data(first5_char)</p>
+					<p><i>return</i> get_password_leaks_count(response, tail)</p>
+				</div>
+			</h6>
+		</div>
+
+		<h5>Sending only the first 5 characters</h5>
+			<div class="code">
+				<h6>
+					<p><i>def</i> <i style="color: #ffcb91;">pwned_api_check</i>(password):</p>
+					<div class="indent">
+						<p><i>def</i> <i style="color: #ffcb91;">get_password_leaks_count</i>(hashes, hash_to_check):</p>
+						<p>hashes = (line.split(':') for line in hashes.text.splitlines())</p>
+						<p>for h, count in hashes:</p>
+						<p id="if">if h == hash_to_check:</p>
+						<p id="return"><i>return</i> count</p>
+						<p><i>return</i> 0</p>
+					</div>
+				</h6>
+			</div>
+			<p>In here it can be noted that the rest of the hashed password is stored only in the local computer</p>
+			<br>
+			<br>
+
+		<br>
+		<hr>
+
+	</div>
+
+</body>
+</html>
