@@ -242,3 +242,145 @@ h3 > i {
 #active-games {
   font-family: 'Press Start 2P', cursive;
 }
+
+@media screen and (max-width: 1200px){
+  body {
+    height: 100vh;
+  }
+  .glass {
+    height: 90vh;
+    width: 70vw;
+  }
+
+  .card, #active-games {
+    transform: scale(0.7, 0.7);
+    transition: 1s;
+    transition-timing-function: ease-in-out;
+    position: relative;
+    left: -100px;
+  }
+
+  .dashboard {
+    transform: scale(0.9, 0.9);
+    transition: 1s;
+    transition-timing-function: ease-in-out;
+  }
+}
+
+
+@media screen and (max-width: 815px){
+  body {
+    height: 100vh;
+  }
+  .glass {
+    height: 90vh;
+    width: 70vw;
+  }
+
+  .card, #active-games {
+    width: 250px;
+    height: 100px;
+    transition-timing-function: ease-in-out;
+    transition: 1s;
+    position: relative;
+    left: -200px;
+  }
+
+  .game-thumbnail {
+    position: absolute;
+    top: 10px;
+  }
+
+  .game-title {
+    position: absolute;
+    right: 5px;
+    top: 0px;
+  }
+
+  img {
+    transform: scale(0.7, 0.7);
+    transition: 1s;
+    transition-timing-function: ease-in-out;
+  }
+
+  .dashboard {
+    transform: scale(0.9, 0.9);
+    transition: 1s;
+    transition-timing-function: ease-in-out;
+  }
+
+  button, a {
+    z-index: 3;
+  }
+}
+
+/* Cellphones */
+/* Portrait */
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+
+  body {
+    position: static;
+    background: linear-gradient(to right top, #6E5DDE, #AEE6FA);
+    background-size: 100vh;
+  }
+
+  section {
+    position: fixed;
+  }
+
+  .card, #active-games {
+    transform: scale(0.3, 0.3);
+    transition: 1s;
+    transition-timing-function: ease-in-out;
+    position: relative;
+    left: -100px;
+  }
+
+  .dashboard {
+    position: relative;
+    right: -50px;
+    width: 50px;
+    transition: 1s;
+    transition-timing-function: ease-in-out;
+  }
+
+  .links, img {
+    transform: scale(0.5, 0.5);
+  }
+
+  button, a {
+    z-index: 3;
+    top: 0px;
+    right: 0px;
+  }
+
+}
+
+
+/* Tablet */
+/* Portrait */
+@media only screen
+  and (min-device-width: 768px)
+  and (max-device-width: 1024px)
+  and (-webkit-min-device-pixel-ratio: 1) {
+
+  body {
+    position: static;
+    background: linear-gradient(to right top, #6E5DDE, #AEE6FA);
+    background-size: 100vh;
+  }
+
+  section {
+    position: fixed;
+  }
+
+  .card, #active-games {
+    position: relative;
+    left: -170px;
+  }
+
+}
