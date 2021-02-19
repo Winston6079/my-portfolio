@@ -108,3 +108,25 @@ a {
     position: absolute;
   }
 }
+
+@media only screen
+  and (min-device-width: 330px)
+  and (max-device-width: 450px)
+  and (-webkit-min-device-pixel-ratio: 1) {
+
+  .rock {
+    top: 28rem;
+    left: 35%;
+  }
+
+  .paper {
+    top: 6rem;
+    left: 35%;
+  }
+
+  .scissors {
+    top: 17rem;
+    left: 35%;
+  }
+
+}
